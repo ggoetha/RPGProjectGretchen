@@ -20,7 +20,7 @@ import random
 count = 0
 
 
-def main():
+def main(classes,description,next_class):
   
 
    # game_map = GameMap()
@@ -45,7 +45,7 @@ def main():
         'IE 3600': 'Probability and Statistics',
         'ENGL 2130': 'British Literature'
     }
-    
+
 
     inventory = []
     count = 0
@@ -83,4 +83,4 @@ def main():
 # End of main function
 
 if __name__ == "__main__":
-    main()
+    main(classes,description,next_class)
