@@ -1,14 +1,19 @@
+import random
+
 class EngrRooms():
-    def __init__(self,classes,description,next_class):
+    def __init__(self,classes,incorrect_classes):
         self.classes = classes
-        self.description = description
-        self.next_class
+        self.next_class = " "
+        self.incorrect_classes = incorrect_classes
 
     def get_classes(self):
         return self.classes
 
-    def get_description(self):
-        return self.description
+    def get_description(self, key):
+        return self.classes[key]
+    
+    def get_description_incorrect(self, key):
+        return self.incorrect_classes[key]
 
     def list_classes(self):
         classes_str = ""
@@ -17,8 +22,8 @@ class EngrRooms():
         return classes_str
 
     # gets a random class from incorrect classes, need two    
-    def get_random_incorrect():
-        return random.choice(list(incorrect_classes.values()))
+    def get_random_incorrect(self):
+        return random.choice(list(self.incorrect_classes.keys()))
 
     #def get_next_class(self):
         # if correct class is chosen, move onto the next class. 
