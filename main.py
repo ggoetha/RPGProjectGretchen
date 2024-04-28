@@ -5,13 +5,14 @@ Assignment:     Project 2
 Course:         CPSC1051
 Lab Section:    SECTION 001
 
-CODE DESCRIPTION: Create a text-based RPG game that uses objects to facilitate the game. 
+CODE DESCRIPTION: Create a text-based RPG game that uses classes and objects to facilitate the game. 
 
 '''
 
 # Import all modules and classes and random
 
 # from GameMap import GameMap
+
 from EngrRooms import EngrRooms
 from BonusItems import BonusItems
 from RaiseError import RaiseError
@@ -36,7 +37,7 @@ def print_classes(engr_rooms, display_list, incorrect_list):
 
 def main():
   
-    # game_map = GameMap()
+# List of possible randomized incorrect classes
 
     incorrect_classes = {
         'IE 2100': 'Intro to Industrial Engineering',
@@ -51,6 +52,8 @@ def main():
         'SOC 2010': 'Intro to Sociology'
         }
 
+# List of possible correct classes
+
     correct_classes = {
         'IE 3800': 'Operational Research',
         'IE 3840': 'Engineering Economic Analysis',
@@ -59,41 +62,33 @@ def main():
         'ENGL 2130': 'British Literature'
     }
 
-    # game_map = GameMap()
+# Initializing variables for classes to call later
+
     player = Player()
     engr_rooms = EngrRooms(correct_classes,incorrect_classes)
     raise_error = RaiseError()
 
+# Initializing strike counter and correct counter
+
     strikes = 0
     correct_count = 0
     
-    
+# First print statements yay!
 
     print("You are an Industrial Engineering Student at Clemson University and it's the first day of classes!\n")
     print('Are you excited?! Y/N')
-        
-    raise_error.excited_error()
 
-    excited = input().lower().strip()
+# Initializing a variable for the function in raise error class
+        
+    excited = raise_error.excited_error()
+
+# If excited questions to ask user and print statements that follow
 
     if excited == 'y':
         print("Awesome. Let's get started. There's one thing to note before you start. If you don't make it on time to all of your classes on the first day, YOU (might) FAIL.\n")
     elif excited == 'n':
         print("Well you should be because you chose this major! No going back now! Anyways, let's get started. There's one thing to note before you start. If you don't make it on time to all of your classes on the first day, YOU (might) FAIL.\n")
 
-    #while True:
-        #excited = input().lower().strip()
-        
-
-        #if excited == 'y':
-         #   print("Awesome. Let's get started. There's one thing to note before you start. If you don't make it on time to all of your classes on the first day, YOU (might) FAIL.\n")
-
-        #elif excited == 'n':
-         #   print("Well you should be because you chose this major! No going back now! Anyways, let's get started. There's one thing to note before you start. If you don't make it on time to all of your classes on the first day, YOU (might) FAIL.\n")
-        
-        #else:
-         #   print('Please give a valid answer.\n')
-          #  return
 
     print("Here's your choice of classes and one is the correct choice. Be careful! Remember you have 3 strikes before you FAIL.\n")
 
@@ -163,11 +158,6 @@ def main():
 
         print("Congratulations! You've attended all of your classes on time! You win life as an engineer! How exciting.")
         return
-
-
-        
-            
-
 
 # End of main function
 
