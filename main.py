@@ -6,7 +6,7 @@ Course:         CPSC1051
 Lab Section:    SECTION 001
 
 CODE DESCRIPTION: Create a text-based RPG game that uses classes and objects to facilitate the game. 
-
+CODE LINK: https://github.com/ggoetha/RPGProjectGretchen.git
 '''
 
 # Import all modules and classes and random
